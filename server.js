@@ -5,7 +5,7 @@ const cors = require('cors');
 
 const app = express();
 const PORT = 3000;
-const DATA_FILE = path.join(__dirname, 'data.json');
+const DATA_DIR = path.join(path.dirname(process.execPath), 'data');
 
 app.use(cors());
 app.use(express.json());
@@ -87,7 +87,6 @@ app.delete('/api/items/:id', async (req, res) => {
     }
 });
 
-// Khởi động server
 initDataFile().then(() => {
     app.listen(PORT, '0.0.0.0', () => {
         console.log(`App Server đang chạy tại: http://localhost:${PORT}`);

@@ -1,12 +1,21 @@
 {
-  "name": "file-based-app-server",
+  "name": "app-file-server",
   "version": "1.0.0",
+  "description": "App server luu du lieu dang file",
   "main": "server.js",
+  "bin": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build-exe": "pkg . --targets node18-win-x64 --output dist/AppServer.exe"
+  },
+  "pkg": {
+    "assets": []
   },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@yao-pkg/pkg": "^5.11.5"
   }
 }
