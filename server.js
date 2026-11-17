@@ -5,6 +5,7 @@ const cors = require('cors');
 
 const app = express();
 const PORT = 3000;
+const DATA_FILE = path.join(process.cwd(), 'data.json');
 const DATA_DIR = path.join(path.dirname(process.execPath), 'data');
 
 app.use(cors());
